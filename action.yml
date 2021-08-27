@@ -1,0 +1,17 @@
+name: 'preload-local-actions-action'
+description: 'GitHub action to preload multiple "private" actions'
+author: "leemeador"
+inputs:
+  repository:
+    description: 'List of one or more repositories to load'
+    required: true
+  token:
+    description: 'Usually a secret holding api token with access to read all repos'
+    required: true
+  path:
+    description: 'All repositories contents will be loaded in this path'
+    required: false
+    default: './.github/actions'
+runs:
+  using: 'node12' # check out options here https://docs.github.com/en/free-pro-team@latest/actions/creating-actions/metadata-syntax-for-github-actions
+  main: 'dist/index.js'

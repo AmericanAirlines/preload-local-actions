@@ -1,0 +1,29 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": ["eslint:recommended", "prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "all",
+        "bracketSpacing": true,
+        "printWidth": 120,
+        "tabWidth": 4
+      }
+    ],
+    // octokit/rest requires parameters that are not in camelcase
+    "camelcase": "off"
+    //"@typescript-eslint/camelcase": ["error", {"properties": "never"}]
+  },
+  "env": {
+    "node": true,
+    "jest": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  }
+}

@@ -1,0 +1,33 @@
+name: Test GitHub Action
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: test the action
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+
+      - name: execute the action
+        uses: ./
+        with:
+          repository: |
+            actions/checkout@v2.3.4
+            actions/github-script@v4.0.2
+          token: ${{ secrets.GITHUB_TOKEN  }}
+          path: ./.github/actions/all # optional
+
+      - name: verify the action
+        run: |
+          ls -al ./.github/actions/all
+          set -ex
+          ls -al ./.github/actions/all/checkout
+          ls -al ./.github/actions/all/github-script

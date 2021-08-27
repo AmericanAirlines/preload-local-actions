@@ -1,0 +1,34 @@
+name: Create Release
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths-ignore:
+      - "README.md"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # https://github.com/marketplace/actions/release-drafter
+      - name: create and publish a release
+        uses: release-drafter/release-drafter@v5.15.0
+        id: createrelease
+        with:
+          publish: true
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: update tag version in readme
+        run: |
+          sed -i 's/\(ref:\)\(.*\)/\1 ${{ steps.createrelease.outputs.tag_name }}/' README.md
+          git config --global user.email "githubactions@aa.com"
+          git config --global user.name "Github Actions"
+          git add README.md
+          git commit -m "Update Release Version to ${{ steps.createrelease.outputs.tag_name }}"
+          git push

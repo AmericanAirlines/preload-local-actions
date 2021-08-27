@@ -1,0 +1,53 @@
+Warranty Disclaimer:
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+With the exception of dependencies documented within package.json and code written by those listed in Authors.md,
+this project is entirely composed of custom code. If 3rd party code is utilized in the future, attribution will be added here.
+
+
+Attribution of External Sources:
+This project includes code that is a derivative work of the following external packages. These components are released under
+separate copyright and licensing details shown below.
+
+-> git-source-provider.ts
+-> fs-helper.ts
+-> git-command-manager.ts
+
+------------------------------------------------------------------
+
+Notices:
+
+Copyright Notice and Text
+Software repo from which external packages originated: https://github.com/actions/checkout
+Version SHA: 5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+Software packages:
+
+-> action.ts                contains source derived from git-source-provider.ts in originating software repo
+-> fs-helper.ts             contains source derived from fs-helper.ts           in originating software repo
+-> git-command-manager.ts   contains source derived from git-command-manager.ts in originating software repo
+
+The MIT License (MIT)
+
+Copyright (c) 2018 GitHub, Inc. and contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+--------------------------------------------
