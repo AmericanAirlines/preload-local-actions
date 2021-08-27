@@ -12,7 +12,7 @@ export function directoryExistsSync(path: string, required?: boolean): boolean {
     let stats: fs.Stats;
     try {
         stats = fs.statSync(path);
-    } catch (error) {
+    } catch (error: any) {
         if (error.code === 'ENOENT') {
             if (!required) {
                 return false;
@@ -40,7 +40,7 @@ export function existsSync(path: string): boolean {
 
     try {
         fs.statSync(path);
-    } catch (error) {
+    } catch (error: any) {
         if (error.code === 'ENOENT') {
             return false;
         }
@@ -59,7 +59,7 @@ export function fileExistsSync(path: string): boolean {
     let stats: fs.Stats;
     try {
         stats = fs.statSync(path);
-    } catch (error) {
+    } catch (error: any) {
         if (error.code === 'ENOENT') {
             return false;
         }
