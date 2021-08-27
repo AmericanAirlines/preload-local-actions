@@ -1,4 +1,4 @@
-name: 'preload-local-actions-action'
+name: 'preload-local-actions'
 description: 'GitHub action to preload multiple "private" actions'
 author: "leemeador"
 inputs:
