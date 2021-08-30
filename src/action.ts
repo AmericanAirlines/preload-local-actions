@@ -71,7 +71,7 @@ async function run(): Promise<void> {
 
             core.endGroup();
         }
-    } catch (error) {
+    } catch (error: any) {
         core.setFailed(error.message);
     }
 }

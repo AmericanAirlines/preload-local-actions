@@ -1,5 +1,5 @@
 {
-  "name": "preload-local-actions-action",
+  "name": "preload-local-actions",
   "version": "1.0.0",
   "description": "GitHub action to preload multiple private actions",
   "main": "dist/index.js",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AmericanAirlines/preload-local-actions-action.git"
+    "url": "git+https://github.com/AmericanAirlines/preload-local-actions.git"
   },
   "keywords": [
     "actions",
@@ -29,9 +29,9 @@
   "license": "MIT",
   "bugs": {
     "type": "git",
-    "url": "git+https://github.com/AmericanAirlines/preload-local-actions-action/issues"
+    "url": "git+https://github.com/AmericanAirlines/preload-local-actions/issues"
   },
-  "homepage": "https://github.com/AmericanAirlines/preload-local-actions-action#readme",
+  "homepage": "https://github.com/AmericanAirlines/preload-local-actions#readme",
   "dependencies": {
     "@actions/core": "^1.4.0",
     "@actions/exec": "^1.1.0",
@@ -39,17 +39,17 @@
     "@actions/io": "^1.1.1"
   },
   "devDependencies": {
-    "prettier": "^2.3.2",
-    "@types/node": "^16.4.7",
-    "@types/jest": "^26.0.24",
+    "@types/jest": "27.0.1",
+    "@types/node": "16.7.2",
     "@typescript-eslint/eslint-plugin": "4.28.5",
     "@typescript-eslint/parser": "4.28.5",
-    "@vercel/ncc": "^0.29.0",
-    "eslint": "^7.30.0",
+    "@vercel/ncc": "0.29.2",
+    "eslint": "7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "3.4.1",
     "jest": "^27.0.6",
-    "ts-jest": "^27.0.4",
+    "prettier": "^2.3.2",
+    "ts-jest": "27.0.5",
     "typescript": "^4.3.5"
   }
 }

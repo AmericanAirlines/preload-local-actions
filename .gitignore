@@ -1,7 +1,19 @@
 **/node_modules/
 **/.idea/
 /lib/
-/yarn-error.log
+npm-debug.log*
+yarn-debug.log*
+/yarn-error.log*
 /.npmrc
 /.npmrc.dont.use
+/package-lock.json
+
+# Coverage directory used by Jest
 coverage
+
+
+# IDE/Editor
+*.swp
+.idea/
+*.iml
+.vscode/

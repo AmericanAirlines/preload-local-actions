@@ -1,4 +1,4 @@
-# preload-local-actions-action for GitHub Actions
+# preload-local-actions for GitHub Actions
 
 # About
 
@@ -15,7 +15,7 @@ your workflow starts (due to being in private or internal repositories) you will
 folders.
 
 ```yaml
-name: preload-local-actions-action
+name: preload-local-actions
 
 on:
     push:
@@ -31,8 +31,8 @@ jobs:
         steps:
             - uses: actions/checkout@v2 # Checks out your repository, which should be done first
 
-            - name: preload-local-actions-action
-              uses: AmericanAirlines/preload-local-actions-action@v1.0.0 # be sure to use the latest release
+            - name: preload-local-actions
+              uses: AmericanAirlines/preload-local-actions@v1.0.0 # be sure to use the latest release
               with:
                   repository: |
                       ownerOrOrg/repo_for_action1@v1.3.5
@@ -89,8 +89,8 @@ The action loads each repo into a subfolder of the default location: `.github/ac
 using the name of the repository itself.
 
 ```yaml
-- name: preload-local-actions-action ## Executes preload-local-actions-action
-  uses: ./.github/actions/preload-local-actions-action
+- name: preload-local-actions ## Executes preload-local-actions
+  uses: ./.github/actions/preload-local-actions
   with:
       repository: |
           ownerOrOrg/repo_for_action1@v1.3.5
@@ -104,8 +104,8 @@ Load one action to be used in the following steps. Specify single repos in a sta
 supplied that can read the action's repo.
 
 ```yaml
-- name: preload-local-actions-action ## Executes preload-local-actions-action
-  uses: ./.github/actions/preload-local-actions-action
+- name: preload-local-actions ## Executes preload-local-actions
+  uses: ./.github/actions/preload-local-actions
   with:
       repository: 'ownerOrOrg/repo_for_action1@v1.3.5'
       token: ${{ secrets.MY_READONLY_PAT }}
@@ -120,8 +120,8 @@ The action loads each repo into a subfolder of the specified path. That subfolde
 repository itself.
 
 ```yaml
-- name: preload-local-actions-action ## Executes preload-local-actions-action
-  uses: ./.github/actions/preload-local-actions-action
+- name: preload-local-actions ## Executes preload-local-actions
+  uses: ./.github/actions/preload-local-actions
   with:
       repository: |
           ownerOrOrg/repo_for_action1@v1.3.5
