@@ -29,7 +29,7 @@ jobs:
 
       - name: update tag version in readme
         run: |
-          sed -i 's/\(AmericanAirlines/preload-local-actions@\)\(.*\)/\1 ${{ steps.createrelease.outputs.tag_name }}/' README.md
+          sed -i 's/\(AmericanAirlines\/preload-local-actions@\)\(.*\)/\1 ${{ steps.createrelease.outputs.tag_name }}/' README.md
           git config --global user.email "githubactions@aa.com"
           git config --global user.name "Github Actions"
           git add README.md
