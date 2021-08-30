@@ -27,11 +27,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: update tag version in readme
-        run: |
-          sed -i 's/\(AmericanAirlines\/preload-local-actions@\)\(.*\)/\1 ${{ steps.createrelease.outputs.tag_name }}/' README.md
-          git config --global user.email "githubactions@aa.com"
-          git config --global user.name "Github Actions"
-          git add README.md
-          git commit -m "Update Release Version to ${{ steps.createrelease.outputs.tag_name }}"
-          git push
+#      - name: update tag version in readme
+#        run: |
+#          sed -i 's/\(AmericanAirlines\/preload-local-actions@\)\(.*\)/\1 ${{ steps.createrelease.outputs.tag_name }}/' README.md
+#          git config --global user.email "githubactions@aa.com"
+#          git config --global user.name "Github Actions"
+#          git add README.md
+#          git commit -m "Update Release Version to ${{ steps.createrelease.outputs.tag_name }}"
+#          git push
