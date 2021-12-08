@@ -3,7 +3,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 
-With the exception of dependencies documented within package.json and code written by those listed in Authors.md,
+With the exception of dependencies documented within package.json and code written by those listed in AUTHORS.md,
 this project is entirely composed of custom code. If 3rd party code is utilized in the future, attribution will be added here.
 
 
