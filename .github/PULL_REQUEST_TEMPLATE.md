@@ -1,5 +1,5 @@
 ## Pre-Requisites
-- [ ] Yes, I updated [AUTHORS.md](../blob/main/Authors.md) **OR** this is not my first contribution
+- [ ] Yes, I updated [AUTHORS.md](../Authors.md) **OR** this is not my first contribution
 - [ ] Yes, I included and/or modified tests to cover relevent code **OR** my change is non-technical
 - [ ] Yes, I wrote this code entirely myself **OR** I properly attributed these changes in [Third Party Notices](../blob/main/THIRD-PARTY-NOTICES.txt)
 
