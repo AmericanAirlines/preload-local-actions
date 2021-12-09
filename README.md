@@ -32,7 +32,7 @@ jobs:
             - uses: actions/checkout@v2 # Checks out your repository, which should be done first
 
             - name: preload-local-actions
-              uses: AmericanAirlines/preload-local-actions@v1.0.4 # be sure to use the latest release
+              uses: AmericanAirlines/preload-local-actions@v1.0.5 # be sure to use the latest release
               with:
                   repository: |
                       ownerOrOrg/repo_for_action1@v1.3.5
