@@ -15,7 +15,8 @@
     "watch": "ncc build src/action.ts --watch"
   },
   "engines": {
-    "yarn": "1.22"
+    "yarn": "1.22",
+    "node": "17.0.10"
   },
   "repository": {
     "type": "git",
