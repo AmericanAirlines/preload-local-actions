@@ -15,7 +15,8 @@
     "watch": "ncc build src/action.ts --watch"
   },
   "engines": {
-    "yarn": "1.22"
+    "yarn": "1.22",
+    "node": "16.13.2"
   },
   "repository": {
     "type": "git",
@@ -36,20 +37,21 @@
     "@actions/core": "^1.6.0",
     "@actions/exec": "^1.1.0",
     "@actions/github": "^5.0.0",
-    "@actions/io": "^1.1.1"
+    "@actions/io": "^1.1.1",
+    "yarn": "^1.22.17"
   },
   "devDependencies": {
     "@types/jest": "27.0.3",
-    "@types/node": "16.11.12",
+    "@types/node": "17.0.10",
     "@typescript-eslint/eslint-plugin": "4.33.0",
     "@typescript-eslint/parser": "4.33.0",
-    "@vercel/ncc": "0.33.0",
+    "@vercel/ncc": "0.33.1",
     "eslint": "7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "4.0.0",
+    "jest": "^27.4.7",
     "prettier": "^2.5.1",
-    "jest": "^27.4.3",
-    "typescript": "^4.5.2",
-    "ts-jest": "27.1.1"
+    "ts-jest": "27.1.3",
+    "typescript": "^4.5.5"
   }
 }
