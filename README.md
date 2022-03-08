@@ -146,4 +146,4 @@ Next, install the app's dependencies by running `yarn install`. To build the app
 
 # Contributing
 
-Interested in contributing to the project? Check out our [Contributing Guidelines](./.github/CONTRIBUTING.md).
+Interested in contributing to the project?  Check out our [Contributing Guidelines](./.github/CONTRIBUTING.md).
