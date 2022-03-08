@@ -72,9 +72,17 @@ feature/bugfix branch with `git checkout -b yourNewBranchName` and begin making 
 #### Committing
 
 When you are ready to commit code, please do so on the feature/bugfix branch (as created above) and commit only the
-files that are relevant to your change (e.g., **do not use** `git add .` or `git commit -a`). After the first time you
+files that are relevant to your change (e.g., **do not use** `git add .` or `git commit -a` to avoid massive change sets).
+
+*Note that you may not be able to get a build that will pass the **test** workflow if you do the
+build described below on **Windows**. It depends. It turns out that the generated .js code is different on
+Windows and on the GitHub Linux hosted runners. (Let us know if you learn the same problem
+exists for Mac.) That difference will cause the test to fail as it thinks you have not built
+the js code from the typescript.*
+
+After the first time you
 run `yarn install` to install dependencies, you will be able to run `yarn all` to prepare the action's executable
-Javascript for running:
+Javascript for running which will do the following:
 
 - `yarn lint:fix` which will lint all changed files and perform corrections where possible
 - `yarn pretty:fix` which will use `prettier` on all changed files and perform corrections where possible
