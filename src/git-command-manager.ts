@@ -6,7 +6,7 @@ import * as io from '@actions/io';
 import * as github from '@actions/github';
 
 /**
- * Portions adapted from https://github.com/actions/checkout/tree/5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f (see LICENSE there which is MIT license)
+ * Portions adapted from https://github.com/actions/checkout/tree/2d1c1198e79c30cca5c3957b1e3b65ce95b5356e git-command-manager.ts (see LICENSE there which is MIT license)
  */
 
 // requires git version 2.18 or greater to work
@@ -162,7 +162,7 @@ export class GitCommandManager {
         console.log(`git executable is ${this.gitPath}`);
 
         // Git version
-        console.log('Getting git version');
+        core.debug('Getting git version');
         let gitVersion = '';
         const gitOutput = await this.execGit(['version']);
         const stdout = gitOutput.stdout.trim();

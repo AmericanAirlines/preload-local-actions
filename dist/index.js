@@ -47,6 +47,7 @@ const io = __importStar(__nccwpck_require__(7436));
 const fs = __importStar(__nccwpck_require__(7147));
 const path = __importStar(__nccwpck_require__(1017));
 function run() {
+    var _a;
     return __awaiter(this, void 0, void 0, function* () {
         try {
             // inputs:
@@ -59,7 +60,7 @@ function run() {
             // Get the JSON webhook payload for the event that triggered the workflow
             // const payload: string = JSON.stringify(github.context.payload, undefined, 2)
             // console.log(`The event payload: ${payload}`)
-            /* This portion adapted from https://github.com/actions/checkout/tree/5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f (see LICENSE there which is MIT license) */
+            /* This portion adapted from https://github.com/actions/checkout/tree/2d1c1198e79c30cca5c3957b1e3b65ce95b5356e main.ts (see LICENSE there which is MIT license) */
             // Remove conflicting file path
             if (fsHelper.fileExistsSync(workingDirectory)) {
                 yield io.rmRF(workingDirectory);
@@ -103,7 +104,7 @@ function run() {
             }
         }
         catch (error) {
-            core.setFailed(error.message);
+            core.setFailed((_a = error === null || error === void 0 ? void 0 : error.message) !== null && _a !== void 0 ? _a : error);
         }
     });
 }
@@ -144,9 +145,10 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.fileExistsSync = exports.existsSync = exports.directoryExistsSync = void 0;
 const fs = __importStar(__nccwpck_require__(7147));
 /**
- * Portions adapted from https://github.com/actions/checkout/tree/5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f (see LICENSE there which is MIT license)
+ * Portions adapted from https://github.com/actions/checkout/tree/2d1c1198e79c30cca5c3957b1e3b65ce95b5356e fs-helper.ts (see LICENSE there which is MIT license)
  */
 function directoryExistsSync(path, required) {
+    var _a;
     if (!path) {
         throw new Error("Arg 'path' must not be empty");
     }
@@ -155,13 +157,13 @@ function directoryExistsSync(path, required) {
         stats = fs.statSync(path);
     }
     catch (error) {
-        if (error.code === 'ENOENT') {
+        if ((error === null || error === void 0 ? void 0 : error.code) === 'ENOENT') {
             if (!required) {
                 return false;
             }
             throw new Error(`Directory '${path}' does not exist`);
         }
-        throw new Error(`Encountered an error when checking whether path '${path}' exists: ${error.message}`);
+        throw new Error(`Encountered an error when checking whether path '${path}' exists: ${(_a = error === null || error === void 0 ? void 0 : error.message) !== null && _a !== void 0 ? _a : error}`);
     }
     if (stats.isDirectory()) {
         return true;
@@ -173,6 +175,7 @@ function directoryExistsSync(path, required) {
 }
 exports.directoryExistsSync = directoryExistsSync;
 function existsSync(path) {
+    var _a;
     if (!path) {
         throw new Error("Arg 'path' must not be empty");
     }
@@ -180,15 +183,16 @@ function existsSync(path) {
         fs.statSync(path);
     }
     catch (error) {
-        if (error.code === 'ENOENT') {
+        if ((error === null || error === void 0 ? void 0 : error.code) === 'ENOENT') {
             return false;
         }
-        throw new Error(`Encountered an error when checking whether path '${path}' exists: ${error.message}`);
+        throw new Error(`Encountered an error when checking whether path '${path}' exists: ${(_a = error === null || error === void 0 ? void 0 : error.message) !== null && _a !== void 0 ? _a : error}`);
     }
     return true;
 }
 exports.existsSync = existsSync;
 function fileExistsSync(path) {
+    var _a;
     if (!path) {
         throw new Error("Arg 'path' must not be empty");
     }
@@ -197,12 +201,15 @@ function fileExistsSync(path) {
         stats = fs.statSync(path);
     }
     catch (error) {
-        if (error.code === 'ENOENT') {
+        if ((error === null || error === void 0 ? void 0 : error.code) === 'ENOENT') {
             return false;
         }
-        throw new Error(`Encountered an error when checking whether path '${path}' exists: ${error.message}`);
+        throw new Error(`Encountered an error when checking whether path '${path}' exists: ${(_a = error === null || error === void 0 ? void 0 : error.message) !== null && _a !== void 0 ? _a : error}`);
     }
-    return !stats.isDirectory();
+    if (!stats.isDirectory()) {
+        return true;
+    }
+    return false;
 }
 exports.fileExistsSync = fileExistsSync;
 
@@ -385,7 +392,7 @@ class GitCommandManager {
             this.gitPath = yield io.which('git', true);
             console.log(`git executable is ${this.gitPath}`);
             // Git version
-            console.log('Getting git version');
+            core.debug('Getting git version');
             let gitVersion = '';
             const gitOutput = yield this.execGit(['version']);
             const stdout = gitOutput.stdout.trim();
