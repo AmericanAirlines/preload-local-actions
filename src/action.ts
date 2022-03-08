@@ -25,7 +25,7 @@ async function run(): Promise<void> {
         // Remove conflicting file path
         if (fsHelper.fileExistsSync(workingDirectory)) {
             await io.rmRF(workingDirectory);
-            console.log('A file with name of working directory removed');
+            console.log('A file with the same name as the working directory removed');
         }
 
         // Create directory
