@@ -20,7 +20,7 @@ async function run(): Promise<void> {
         // const payload: string = JSON.stringify(github.context.payload, undefined, 2)
         // console.log(`The event payload: ${payload}`)
 
-        /* This portion adapted from https://github.com/actions/checkout/tree/5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f (see LICENSE there which is MIT license) */
+        /* This portion adapted from https://github.com/actions/checkout/tree/2d1c1198e79c30cca5c3957b1e3b65ce95b5356e main.ts (see LICENSE there which is MIT license) */
 
         // Remove conflicting file path
         if (fsHelper.fileExistsSync(workingDirectory)) {
@@ -71,8 +71,8 @@ async function run(): Promise<void> {
 
             core.endGroup();
         }
-    } catch (error: any) {
-        core.setFailed(error.message);
+    } catch (error) {
+        core.setFailed((error as any)?.message ?? error);
     }
 }
 

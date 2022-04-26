@@ -9,9 +9,9 @@ jobs:
   build: # make sure build/ci work properly
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '16.13.2'
           cache: 'yarn'
@@ -25,6 +25,10 @@ jobs:
       - name: 'Verify lint/pretty/build made no changes'
         run: |
           if [[ "$(git status --porcelain)" != "" ]]; then
+              echo ----------------------------------------
+              echo git status --porcelain
+              echo ----------------------------------------
+              git status --porcelain
               echo ----------------------------------------
               echo git status
               echo ----------------------------------------

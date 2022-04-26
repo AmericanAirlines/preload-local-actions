@@ -21,7 +21,8 @@ Notices:
 
 Copyright Notice and Text
 Software repo from which external packages originated: https://github.com/actions/checkout
-Version SHA: 5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+First Version SHA: 5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+Updated with Version SHA: 2d1c1198e79c30cca5c3957b1e3b65ce95b5356e (3/8/2022 v 1.0.7)
 Software packages:
 
 -> action.ts                contains source derived from git-source-provider.ts in originating software repo
