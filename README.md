@@ -74,7 +74,7 @@ one above for every use of either action.
 
 ## Outputs
 
-This action has no output
+This action has no output.
 
 ## Use Cases
 
